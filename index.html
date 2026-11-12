@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lift Log</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
+<meta name="theme-color" content="#e07a3f">
+<style>
+html,body{margin:0;height:100%;background:#e07a3f;color:#1c1c1a;font:17px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center}
+img{width:96px;height:96px;border-radius:22px}
+p{margin:0;max-width:320px}
+a{display:inline-block;margin-top:6px;padding:14px 22px;border-radius:14px;background:#1c1c1a;color:#f1f0eb;font-weight:600;text-decoration:none}
+#setup{display:none}
+</style>
+</head>
+<body>
+<main>
+<img src="apple-touch-icon.png" alt="Lift Log icon">
+<p id="go">Opening Lift Log…</p>
+<p id="setup">To put this on your Home Screen, tap the Share button, then Add to Home Screen.</p>
+<a id="open" href="https://claude.ai/artifact/CDHkNNhsURin1KKCF6KAVQ">Open Lift Log</a>
+</main>
+<script>
+(function () {
+  var target = "https://claude.ai/artifact/CDHkNNhsURin1KKCF6KAVQ";
+  if (/[?&]setup\b/.test(location.search)) {
+    document.getElementById("go").style.display = "none";
+    document.getElementById("setup").style.display = "block";
+    try { history.replaceState(null, "", location.pathname); } catch (e) {}
+  } else {
+    location.replace(target);
+  }
+})();
+</script>
+</body>
+</html>
